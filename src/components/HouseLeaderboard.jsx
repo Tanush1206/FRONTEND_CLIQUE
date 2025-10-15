@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE_URL } from '../config';
 
 // Live data will provide: [{ houseId, name, color, totalPoints }]
 
@@ -108,7 +109,7 @@ const HouseLeaderboard = () => {
     const fetchLeaderboard = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:4000/api/leaderboard');
+        const response = await fetch(`${API_BASE_URL}/leaderboard`);
         const data = await response.json();
         
         if (data.success && data.leaderboard) {

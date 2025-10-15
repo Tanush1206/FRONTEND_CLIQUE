@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth.jsx';
+import { API_BASE_URL } from '../config';
 
 export default function AuthSuccess() {
   const [searchParams] = useSearchParams();
@@ -15,7 +16,7 @@ export default function AuthSuccess() {
       localStorage.setItem('authToken', token);
       
       // Fetch user data
-      fetch('http://localhost:4000/api/auth/me', {
+      fetch(`${API_BASE_URL}/auth/me`, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },

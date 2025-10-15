@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import EventCard from "../components/EventCard";
+import { API_BASE_URL } from "../config";
 
 const Cultural = () => {
   const [events, setEvents] = useState([]);
@@ -12,7 +13,7 @@ const Cultural = () => {
     const fetchCulturalEvents = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:4000/api/events?category=cultural&limit=50');
+        const response = await fetch(`${API_BASE_URL}/events?category=cultural&limit=50`);
         const data = await response.json();
         
         if (data.success) {

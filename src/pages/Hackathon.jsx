@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import EventCard from "../components/EventCard";
+import { API_BASE_URL } from "../config";
 
 const Hackathon = () => {
   const [events, setEvents] = useState([]);
@@ -12,7 +13,7 @@ const Hackathon = () => {
     const fetchHackathonEvents = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:4000/api/events?category=hackathon&limit=50');
+        const response = await fetch(`${API_BASE_URL}/events?category=hackathon&limit=50`);
         const data = await response.json();
         
         if (data.success) {
