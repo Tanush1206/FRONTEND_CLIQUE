@@ -1,6 +1,6 @@
 // Authentication utility functions
 
-const API_URL = 'http://localhost:4000/api';
+const API_URL = 'https://backend-clique.onrender.com/api';
 
 /**
  * Get the stored auth token

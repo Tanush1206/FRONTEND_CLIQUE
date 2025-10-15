@@ -21,7 +21,7 @@ export default function Login() {
     // Clear any previous errors
     setError('');
     // Redirect to backend Google OAuth endpoint
-    window.location.href = 'http://localhost:4000/api/auth/google';
+    window.location.href = 'https://backend-clique.onrender.com/api/auth/google';
   };
 
   return (
